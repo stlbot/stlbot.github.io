@@ -9,7 +9,7 @@
     <meta name="keywords" content="Keywords" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      The Lazy Student's Dream: ChatGPT Passing an Engineering Course on Its Own
+      STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning
     </title>
 
     <link
@@ -62,8 +62,8 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
-                The Lazy Student's Dream: ChatGPT Passing an Engineering Course
-                on Its Own
+                STL-Constrained Multi-Robot Trajectory Planning via Constrained 
+                Bayesian Optimization and Local Cost Map Learning
               </h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
@@ -129,25 +129,15 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                This paper presents a comprehensive investigation into the
-                capability of Large Language Models (LLMs) to successfully
-                complete a semester-long undergraduate control systems course.
-                Through evaluation of 115 course deliverables, we assess LLM
-                performance using ChatGPT under a "minimal effort" protocol that
-                simulates realistic student usage patterns. The investigation
-                employs a rigorous testing methodology across multiple
-                assessment formats, from auto-graded multiple choice questions
-                to complex Python programming tasks and long-form analytical
-                writing. Our analysis provides quantitative insights into AI's
-                strengths and limitations in handling mathematical formulations,
-                coding challenges, and theoretical concepts in control systems
-                engineering. The LLM achieved a B-grade performance (82.24%),
-                approaching but not exceeding the class average (84.99%), with
-                strongest results in structured assignments and greatest
-                limitations in open-ended projects. The findings inform
-                discussions about course design adaptation in response to AI
-                advancement, moving beyond simple prohibition towards thoughtful
-                integration of these tools in engineering education.
+                We address multi-robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints.
+                Exact approaches face scalability bottlenecks and limited adaptability, while conventional sampling-based methods require 
+                excessive samples for optimal trajectories.We propose a two-stage framework integrating sampling-based online learning
+                with formal STL reasoning. At the single-robot level, our constrained Bayesian Optimization-based Tree search (cBOT) planner
+                uses Gaussian process surrogate models to learn local cost maps and feasibility constraints, generating shorter collision-free
+                trajectories with fewer samples. At the multi-robot level, our STL-enhanced Kinodynamic Conflict-Based Search (STL-KCBS) algorithm
+                incorporates STL monitoring into conflict detection and resolution, ensuring specification satisfaction while maintaining scalability
+                and probabilistic completeness.Benchmarking demonstrates improved trajectory efficiency and safety over existing methods. Real-world 
+                experiments with autonomous surface vehicles validate robustness and practical applicability in uncertain environments.
               </p>
             </div>
           </div>
