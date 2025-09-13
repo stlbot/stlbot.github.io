@@ -1,642 +1,324 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="The Lazy Student's Dream: ChatGPT Passing an Engineering Course on Its Own"
-    />
-    <meta name="keywords" content="Keywords" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning
-    </title>
+    <meta name="description" content="Project page for STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning (STLBOW)." />
+    <meta name="keywords" content="STL, Signal Temporal Logic, multi-robot planning, Bayesian Optimization, KCBS, cBOT, STLBOW" />
+    <title>STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <!-- Fonts & UI -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,700|Castoro:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <style>
-      .question-section {
-        margin: 2rem 0;
-        padding: 2rem;
-        background-color: #f5f5f5;
-        border-radius: 8px;
+      :root {
+        --brand: #2b6cb0;
       }
-
-      .image-comparison {
-        display: flex;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .image-container {
-        flex: 1;
-        text-align: center;
-      }
-
-      .image-container img {
-        max-width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .question-type {
-        margin-bottom: 1rem;
-      }
+      html, body { font-family: 'Noto Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+      .hero.is-light { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 60%); }
+      .publication-title { font-family: 'Google Sans', 'Noto Sans', sans-serif; letter-spacing: -0.3px; }
+      .author-block a { color: var(--brand); text-decoration: none; }
+      .author-block a:hover { text-decoration: underline; }
+      .publication-links .button { margin: 0.25rem; }
+      .figure-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+      .figcap { font-size: 0.9rem; color: #4a4a4a; margin-top: 0.5rem; }
+      .is-code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+      .bibtex pre { white-space: pre; overflow-x: auto; background: #0b1020; color: #e6edf3; padding: 1rem; border-radius: 10px; }
+      .ack-box { background: #f5f7fb; border: 1px solid #e7ecf5; border-radius: 10px; padding: 1.25rem; }
+      .tag.is-spec { background: #edf2ff; color: #364fc7; }
+      .tag.is-planner { background: #e6fcf5; color: #087f5b; }
+      .tag.is-bow { background: #fff4e6; color: #e8590c; }
+      .tag.is-stl { background: #f8f0fc; color: #862e9c; }
+      .sticky-nav { position: sticky; top: 0; background: #fff; z-index: 5; border-bottom: 1px solid #eee; }
+      .scrollspy a { color: #333; }
+      .scrollspy a.is-active { color: var(--brand); font-weight: 700; }
+      .subtitle.kicker { color: var(--brand); letter-spacing: .06em; text-transform: uppercase; font-weight: 700; }
+      .media + .media { margin-top: 1rem; }
+      .video { aspect-ratio: 16/9; width: 100%; border-radius: 10px; }
     </style>
   </head>
   <body>
-    <section class="hero">
+    <!-- Header/Hero -->
+    <section class="hero is-light">
       <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
-            <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">
-                STL-Constrained Multi-Robot Trajectory Planning via Constrained 
-                Bayesian Optimization and Local Cost Map Learning
-              </h1>
-              <!-- <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="https://gokulp01.github.io/">Gokul Puthumanaillam</a
-                  ><sup></sup>,</span
-                >
-                <span class="author-block">
-                  <a href="http://bretl.csl.illinois.edu">Timothy Bretl</a
-                  ><sup></sup>,
-                </span>
-                <span class="author-block">
-                  <a href="https://mornik.web.illinois.edu/">Melkior Ornik</a
-                  ><sup></sup>
-                </span>
-              </div>
+        <div class="container is-max-desktop has-text-centered">
+          <p class="subtitle kicker">STLBOW</p>
+          <h1 class="title is-1 publication-title">STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</h1>
+          <p class="is-size-6 mt-2">
+            <span class="tag is-stl is-light is-rounded">Signal Temporal Logic</span>
+            <span class="tag is-planner is-light is-rounded">Multi‑Robot Planning</span>
+            <span class="tag is-bow is-light is-rounded">Bayesian Optimization</span>
+          </p>
 
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  ><sup></sup>University of Illinois Urbana-Champaign</span
-                >
-                <!--<span class="author-block"><sup>2</sup>Department Name</span>-->
-              <!-- </div> --> -->
+          <!-- Authors (edit as needed) -->
+          <div class="is-size-5 mt-4 publication-authors">
+            <span class="author-block">
+              <!-- TODO: Replace with the correct author list/affiliations -->
+              <strong>Authors:</strong> Your Author List Here
+            </span>
+          </div>
 
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <!-- PDF Link. -->
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/abs/2503.05760"
-                      class="button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-                  <!-- Code Link. -->
-                  <span class="link-block">
-                    <a
-                      href="https://github.com/gradegpt/gradegpt.github.io/tree/main"
-                      class="button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
+          <!-- Links -->
+          <div class="publication-links mt-4">
+            <a class="button is-dark is-rounded" href="assets/STLBOW-2.pdf" target="_blank">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper (PDF)</span>
+            </a>
+            <a class="button is-link is-light is-rounded" href="https://stlbow.github.io/" target="_blank">
+              <span class="icon"><i class="fas fa-video"></i></span>
+              <span>Project / Videos</span>
+            </a>
+            <a class="button is-rounded" href="#bibtex">
+              <span class="icon"><i class="fas fa-quote-right"></i></span>
+              <span>Cite</span>
+            </a>
+            <!-- Optional: Code repo -->
+            <!-- <a class="button is-dark is-rounded" href="https://github.com/your/repo" target="_blank"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a> -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Abstract Section -->
-    <section class="section">
+    <!-- Sticky subnav -->
+    <div class="sticky-nav">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                We address multi-robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints.
-                Exact approaches face scalability bottlenecks and limited adaptability, while conventional sampling-based methods require 
-                excessive samples for optimal trajectories.We propose a two-stage framework integrating sampling-based online learning
-                with formal STL reasoning. At the single-robot level, our constrained Bayesian Optimization-based Tree search (cBOT) planner
-                uses Gaussian process surrogate models to learn local cost maps and feasibility constraints, generating shorter collision-free
-                trajectories with fewer samples. At the multi-robot level, our STL-enhanced Kinodynamic Conflict-Based Search (STL-KCBS) algorithm
-                incorporates STL monitoring into conflict detection and resolution, ensuring specification satisfaction while maintaining scalability
-                and probabilistic completeness.Benchmarking demonstrates improved trajectory efficiency and safety over existing methods. Real-world 
-                experiments with autonomous surface vehicles validate robustness and practical applicability in uncertain environments.
-              </p>
-            </div>
+        <nav class="level scrollspy py-2">
+          <div class="level-left">
+            <a class="level-item" href="#abstract">Abstract</a>
+            <a class="level-item" href="#overview">Overview</a>
+            <a class="level-item" href="#results">Results</a>
+            <a class="level-item" href="#ugv">UGV</a>
+            <a class="level-item" href="#bibtex">BibTeX</a>
+            <a class="level-item" href="#ack">Acknowledgments</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Relevant Resources Section -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h3 class="title is-4">
-              Relevant Resources and Links for the Paper
-            </h3>
-
-            <!-- Syllabus -->
-            <div class="mb-4">
-              <a
-                href="assets/syllabus.pdf"
-                class="button is-link is-outlined"
-                target="_blank"
-              >
-                <span class="icon">
-                  <i class="fas fa-book"></i>
-                </span>
-                <span>Syllabus</span>
-              </a>
-            </div>
-
-            <!-- Exams -->
-            <div class="mb-4">
-              <a
-                href="assets/midterm1.pdf"
-                class="button is-link is-outlined mr-2"
-                target="_blank"
-              >
-                <span class="icon">
-                  <i class="fas fa-file-alt"></i>
-                </span>
-                <span>Midterm 1</span>
-              </a>
-              <a
-                href="assets/midterm2.pdf"
-                class="button is-link is-outlined mr-2"
-                target="_blank"
-              >
-                <span class="icon">
-                  <i class="fas fa-file-alt"></i>
-                </span>
-                <span>Midterm 2</span>
-              </a>
-              <a
-                href="assets/final.pdf"
-                class="button is-link is-outlined"
-                target="_blank"
-              >
-                <span class="icon">
-                  <i class="fas fa-file-alt"></i>
-                </span>
-                <span>Final Exam</span>
-              </a>
-            </div>
-
-            <!-- Design Project -->
-            <div class="mb-4">
-              <a
-                href="https://uiuc-ae353.github.io"
-                class="button is-link is-outlined"
-                target="_blank"
-              >
-                <span class="icon">
-                  <i class="fas fa-project-diagram"></i>
-                </span>
-                <span>Design Project</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Overview of Results Section -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Overview of Results</h2>
-
-            <div class="content has-text-justified mb-5">
-              <p>
-                Overall performance: Image below shows LLM performance across
-                assessment types and prompting methods, based on three runs per
-                question. While ChatGPT's exact wording varied between runs,
-                these variations had minimal impact on scoring. Several key
-                patterns emerge: First, context-enhanced prompting consistently
-                outperforms other methodologies across all question types.
-                Second, the progression from image-based to text-based inputs
-                shows systematic improvement, particularly in questions
-                involving mathematical notation. The LLM achieved an overall
-                score of 82.24% using context-enhanced prompting, compared to
-                the class average of 84.99% -- both corresponding to a 'B'
-                grade. This performance difference manifests distinctly across
-                assessments: minimal in structured assignments but substantial
-                in open-ended assessments.
-              </p>
-            </div>
-
-            <!-- Results Images -->
-            <div class="columns is-mobile is-multiline">
-              <div class="column is-3-desktop is-6-tablet is-12-mobile">
-                <figure class="image">
-                  <img src="assets/result1.png" alt="Overall performance" />
-                  <figcaption class="has-text-centered mt-2">
-                    (a) Overall performance
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="column is-3-desktop is-6-tablet is-12-mobile">
-                <figure class="image">
-                  <img src="assets/result2.png" alt="HW performance" />
-                  <figcaption class="has-text-centered mt-2">
-                    (b) HW performance
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="column is-3-desktop is-6-tablet is-12-mobile">
-                <figure class="image">
-                  <img src="assets/result3.png" alt="Project performance" />
-                  <figcaption class="has-text-centered mt-2">
-                    (c) Project performance
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="column is-3-desktop is-6-tablet is-12-mobile">
-                <figure class="image">
-                  <img src="assets/result4.png" alt="Examination performance" />
-                  <figcaption class="has-text-centered mt-2">
-                    (d) Examination performance
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Performance Data Section -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full">
-            <h2 class="title is-3">Performance Data</h2>
-
-            <!-- Performance Table -->
-            <div class="table-container mb-6">
-              <table
-                class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
-              >
-                <caption class="has-text-centered is-size-5 mb-4">
-                  <strong>Table 1:</strong>
-                  LLM performance across assessment types using various
-                  prompting methodologies.
-                </caption>
-                <thead>
-                  <tr>
-                    <th colspan="2" class="has-text-centered">Question Type</th>
-                    <th colspan="2" class="has-text-centered">Image Based</th>
-                    <th colspan="2" class="has-text-centered">
-                      Simplified Text
-                    </th>
-                    <th class="has-text-centered">Context-Enhanced</th>
-                  </tr>
-                  <tr>
-                    <th>Category</th>
-                    <th>Sub-type</th>
-                    <th>Zero-shot (%)</th>
-                    <th>Multi-shot (%)</th>
-                    <th>Zero-shot (%)</th>
-                    <th>Multi-shot (%)</th>
-                    <th>Multi-shot (%)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- HW Section -->
-                  <tr>
-                    <td rowspan="4">HW</td>
-                    <td>MCQ</td>
-                    <td>89.5</td>
-                    <td>93.2</td>
-                    <td>91.2</td>
-                    <td>94.8</td>
-                    <td>96.5</td>
-                  </tr>
-                  <tr>
-                    <td>MCMCQ</td>
-                    <td>85.3</td>
-                    <td>88.4</td>
-                    <td>86.7</td>
-                    <td>90.2</td>
-                    <td>92.1</td>
-                  </tr>
-                  <tr>
-                    <td>Numerical</td>
-                    <td>82.4</td>
-                    <td>85.6</td>
-                    <td>84.2</td>
-                    <td>87.5</td>
-                    <td>89.3</td>
-                  </tr>
-                  <tr>
-                    <td>Code-Based</td>
-                    <td>86.5</td>
-                    <td>89.8</td>
-                    <td>88.2</td>
-                    <td>91.3</td>
-                    <td>93.2</td>
-                  </tr>
-
-                  <!-- Projects Section with dashed border -->
-                  <tr class="has-background-light">
-                    <td rowspan="2">Projects</td>
-                    <td>Code</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>56.2</td>
-                    <td>57.6</td>
-                    <td>58.5</td>
-                  </tr>
-                  <tr class="has-background-light">
-                    <td>Report</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>62.8</td>
-                    <td>64.9</td>
-                    <td>65.8</td>
-                  </tr>
-
-                  <!-- Exam Section with dashed border -->
-                  <tr>
-                    <td rowspan="3">Exam</td>
-                    <td>Mid-Term</td>
-                    <td>85.3</td>
-                    <td>87.5</td>
-                    <td>86.7</td>
-                    <td>88.8</td>
-                    <td>89.8</td>
-                  </tr>
-                  <tr>
-                    <td>Finals: Written</td>
-                    <td>83.0</td>
-                    <td>84.1</td>
-                    <td>83.8</td>
-                    <td>84.6</td>
-                    <td>86.5</td>
-                  </tr>
-                  <tr>
-                    <td>Finals: Auto-graded</td>
-                    <td>93.5</td>
-                    <td>95.3</td>
-                    <td>94.8</td>
-                    <td>96.2</td>
-                    <td>97.4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Performance Analysis Text -->
-            <div class="content">
-              <h4 class="title is-4 has-text-weight-bold is-italic">
-                Homework Performance:
-              </h4>
-              <p>
-                Homework performance reveals subtle patterns across question
-                types. The LLM achieved 90.38% against a class average of
-                91.44%, with performance varying by question type. MCQs showed
-                the highest success, followed by code-based questions, MCMCQ,
-                and numerical problems. This hierarchy persisted across all
-                prompting methodologies, though with varying gaps. The
-                multi-shot approach proved particularly effective for MCQs.
-                Analysis of the 92 homework questions reveals that performance
-                degradation correlated strongly with question complexity:
-                single-concept questions saw higher success rates compared to
-                integration-heavy problems.
-              </p>
-
-              <h4 class="title is-4 has-text-weight-bold is-italic mt-5">
-                Examination Performance:
-              </h4>
-              <p>
-                Examination analysis provides critical insights into LLM
-                capabilities under different assessment conditions. The model
-                achieved 89.72% overall compared to the class average of 84.81%,
-                but this aggregate masks important variations. Auto-graded
-                components of the final (97.4%) significantly outperformed
-                written sections (86.5%), with midterm performance (89.8%)
-                showing intermediate results. This pattern held consistent
-                across prompting methodologies. The performance gap between
-                written and auto-graded components suggests fundamental
-                differences in the model's ability to handle structured versus
-                open-ended problems.
-              </p>
-
-              <h4 class="title is-4 has-text-weight-bold is-italic mt-5">
-                Project Performance:
-              </h4>
-              <p>
-                Project evaluation exposed systematic limitations in LLM
-                capabilities, with the most significant performance gap observed
-                (64.34% versus class average 80.99%). The distinction between
-                code implementation and report writing reveals specific
-                challenges. Code submissions showed consistent patterns of
-                failure in system integration, error handling, and optimization,
-                while maintaining basic functional correctness. Report analysis
-                indicates stronger performance in methodology description and
-                result presentation but weaker performance in critical analysis
-                and design justification. Neither image-based nor multi-shot
-                approaches provided significant improvements in project
-                performance, suggesting fundamental limitations rather than
-                methodology-dependent constraints.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Custom styles for table */
-      .table-container {
-        overflow-x: auto;
-      }
-
-      .table th,
-      .table td {
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      .table caption {
-        caption-side: top;
-      }
-
-      /* Improve table readability on mobile */
-      @media screen and (max-width: 768px) {
-        .table {
-          font-size: 0.85rem;
-        }
-      }
-    </style>
-    <!-- Interactive Questions Section -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Example Questions and Response</h2>
-
-            <!-- Shot Type Selection -->
-            <div class="tabs is-centered is-boxed">
-              <ul id="shotTypeTabs">
-                <li class="is-active" data-shot="zeroshot"><a>Zero-Shot</a></li>
-                <li data-shot="multishot"><a>Multi-Shot</a></li>
-              </ul>
-            </div>
-
-            <!-- Randomizer Button -->
-            <div class="has-text-centered mb-6">
-              <button
-                class="button is-primary is-large"
-                onclick="showRandomImage()"
-              >
-                <span class="icon">
-                  <i class="fas fa-random"></i>
-                </span>
-                <span>Show Random Example</span>
-              </button>
-            </div>
-
-            <!-- Image Display Section -->
-            <div id="imageDisplay" class="content has-text-centered">
-              <!-- Images will be inserted here -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .image-display img {
-        max-width: 100%;
-        margin: 1rem 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .image-container {
-        margin-bottom: 2rem;
-        background-color: #f5f5f5;
-        padding: 2rem;
-        border-radius: 8px;
-      }
-    </style>
-
-    <script>
-      // Define the image paths
-      const imagePaths = {
-        zeroshot: {
-          // Each set includes both 'im' and 'sm' images
-          mcq1: {
-            im: "images/zeroshot/mcq1-im.png",
-            sm: "images/zeroshot/mcq1-sm.png",
-          },
-          mcmcq: {
-            im: "images/zeroshot/mcmcq-im.png",
-            sm: "images/zeroshot/mcmcq-sm.png",
-          },
-          num1: {
-            im: "images/zeroshot/num1-im.png",
-            sm: "images/zeroshot/num1-sm.png",
-          },
-          code1: {
-            im: "images/zeroshot/code1-im.png",
-            sm: "images/zeroshot/code1-sm.png",
-          },
-          exam: {
-            im: "images/zeroshot/exam-im.png",
-            sm: "images/zeroshot/exam-sm.png",
-          },
-        },
-        multishot: {
-          // Each entry is a standalone chain-of-thought explanation
-          mcq: "images/multishot/mcq-ce.png",
-          mcq2: "images/multishot/mcq-ce2.png",
-          mmccq: "images/multishot/mmccq-ce.png",
-          num1: "images/multishot/num1-ce.png",
-          exam: "images/multishot/exam-ce.png",
-        },
-      };
-
-      let currentShot = "zeroshot";
-
-      function showRandomImage() {
-        const imageDisplay = document.getElementById("imageDisplay");
-
-        if (currentShot === "zeroshot") {
-          // Get all available keys for zero-shot
-          const keys = Object.keys(imagePaths.zeroshot);
-          const randomKey = keys[Math.floor(Math.random() * keys.length)];
-          const images = imagePaths.zeroshot[randomKey];
-
-          let html = '<div class="image-container">';
-          html += `<img src="${images.im}" alt="Question" class="mb-4">`;
-          html += `<img src="${images.sm}" alt="Solution" class="mb-4">`;
-          html += "</div>";
-          imageDisplay.innerHTML = html;
-        } else {
-          // Get all available images for multi-shot
-          const images = Object.values(imagePaths.multishot);
-          const randomImage = images[Math.floor(Math.random() * images.length)];
-
-          let html = '<div class="image-container">';
-          html += `<img src="${randomImage}" alt="Chain of thought explanation" class="mb-4">`;
-          html += "</div>";
-          imageDisplay.innerHTML = html;
-        }
-      }
-
-      // Tab switching functionality
-      document.addEventListener("DOMContentLoaded", () => {
-        const shotTabs = document.querySelectorAll("#shotTypeTabs li");
-
-        // Shot type switching
-        shotTabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            shotTabs.forEach((t) => t.classList.remove("is-active"));
-            tab.classList.add("is-active");
-            currentShot = tab.dataset.shot;
-            document.getElementById("imageDisplay").innerHTML = ""; // Clear current images
-          });
-        });
-      });
-    </script>
-  </body>
-  <!-- Acknowledgments Section -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Acknowledgments</h2>
-          <div class="content has-text-justified">
-            <p>
-This study was supported by the University of Illinois Urbana-Champaign’s Grainger College of Engineering through its Grants for the Advancement of Teaching in Engineering program.
-The course's question bank represents several years of iterative development by the authors.
-We gratefully acknowledge Grayson Schaer for building the project environments, and David Hanley and Pranay Thangeda for their significant contributions to the PrairieLearn question bank and lecture materials. We also thank the many others whose efforts helped make this research possible.
-            </p>
-          </div>
-        </div>
+        </nav>
       </div>
     </div>
-  </section>
+
+    <!-- Abstract -->
+    <section id="abstract" class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We address multi‑robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints. Exact approaches face scalability bottlenecks and limited adaptability, while conventional sampling‑based methods require excessive samples for optimal trajectories. We propose a two‑stage framework integrating sampling‑based online learning with formal STL reasoning. At the single‑robot level, our constrained Bayesian Optimization‑based Tree search (cBOT) planner uses Gaussian process surrogate models to learn local cost maps and feasibility constraints, generating shorter collision‑free trajectories with fewer samples. At the multi‑robot level, our STL‑enhanced Kinodynamic Conflict‑Based Search (STL‑KCBS) algorithm incorporates STL monitoring into conflict detection and resolution, ensuring specification satisfaction while maintaining scalability and probabilistic completeness. Benchmarking demonstrates improved trajectory efficiency and safety over existing methods. Real‑world experiments with autonomous surface vehicles validate robustness and practical applicability in uncertain environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview/Contributions -->
+    <section id="overview" class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Overview</h2>
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-7">
+            <div class="content">
+              <h3 class="title is-5">Key Ideas</h3>
+              <ul>
+                <li><strong>cBOT:</strong> A constrained Bayesian optimization‑based tree search that learns a <em>local cost map</em> and <em>feasibility</em> using Gaussian processes to produce shorter, safer trajectories with fewer samples.</li>
+                <li><strong>STL‑KCBS:</strong> STL‑enhanced kinodynamic conflict‑based search using robustness‑based conflict detection and STL monitors for specification‑compliant multi‑robot coordination.</li>
+                <li><strong>Scalability & Guarantees:</strong> Decoupled low‑level planning with probabilistic completeness, coupled with formal STL monitoring for robust satisfaction.</li>
+              </ul>
+              <div class="tags mt-3">
+                <span class="tag is-spec">Kinodynamic Constraints</span>
+                <span class="tag is-spec">Robust STL Monitoring</span>
+                <span class="tag is-spec">Probabilistic Completeness</span>
+              </div>
+            </div>
+          </div>
+          <div class="column is-5">
+            <!-- Placeholder diagram; replace src with an overview figure if available -->
+            <figure>
+              <img src="assets/overview.png" alt="Overview diagram of cBOT + STL‑KCBS workflow (placeholder)." />
+              <figcaption class="figcap">High‑level workflow: cBOT for single‑robot local planning + STL‑KCBS for multi‑robot coordination.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results / Benchmarks (Fig. 1–3 in paper) -->
+    <section id="results" class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Benchmark Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate across four environments (empty, cross‑hall, forest, bugtrap) with teams up to 50 robots. STLBOW (cBOT + STL‑KCBS) delivers near‑perfect success, tractable runtimes, and compact paths compared to RRT‑based and convex optimization‑based baselines.
+          </p>
+        </div>
+
+        <div class="figure-grid">
+          <!-- Fig. 1: Paper-style grid -->
+          <div class="columns is-multiline">
+            <div class="column is-12">
+              <figure>
+                <img src="assets/bench_grid.png" alt="Benchmark comparison across 4 environments and metrics (placeholder)." />
+                <figcaption class="figcap">
+                  <strong>Fig. 1.</strong> Benchmark comparison across representative environments. Columns report success rate, runtime, and path length as the number of robots increases.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Fig. 3: RRT vs BOW under STL (two environments, 12 robots) -->
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <figure>
+                <img src="assets/rrt_forest.png" alt="RRT with STL in forest (placeholder)." />
+                <figcaption class="figcap"><strong>Fig. 3a.</strong> RRT+STL trajectories in <em>forest</em>.</figcaption>
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure>
+                <img src="assets/bow_forest.png" alt="BOW with STL in forest (placeholder)." />
+                <figcaption class="figcap"><strong>Fig. 3b.</strong> BOW+STL trajectories in <em>forest</em> (shorter/smoother).</figcaption>
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure>
+                <img src="assets/rrt_crosshall.png" alt="RRT with STL in cross-hall (placeholder)." />
+                <figcaption class="figcap"><strong>Fig. 3c.</strong> RRT+STL trajectories in <em>cross‑hall</em>.</figcaption>
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure>
+                <img src="assets/bow_crosshall.png" alt="BOW with STL in cross-hall (placeholder)." />
+                <figcaption class="figcap"><strong>Fig. 3d.</strong> BOW+STL trajectories in <em>cross‑hall</em>.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field Experiments (ASVs) Fig. 2 -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Field Experiments (ASVs)</h2>
+        <div class="columns is-multiline is-variable is-4">
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_traj_1.png" alt="ASV trajectories a (placeholder)." />
+              <figcaption class="figcap">(a) Trajectory view</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_traj_2.png" alt="ASV trajectories b (placeholder)." />
+              <figcaption class="figcap">(b) Trajectory view</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_traj_3.png" alt="ASV trajectories c (placeholder)." />
+              <figcaption class="figcap">(c) Trajectory view</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_roi_1.png" alt="ASVs in ROI d (placeholder)." />
+              <figcaption class="figcap">(d) In the region of interest</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_roi_2.png" alt="ASVs in ROI e (placeholder)." />
+              <figcaption class="figcap">(e) In the region of interest</figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure>
+              <img src="assets/asv_roi_3.png" alt="ASVs in ROI f (placeholder)." />
+              <figcaption class="figcap">(f) In the region of interest</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UGV Experiments (Fig. 4) -->
+    <section id="ugv" class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">UGV Experiments</h2>
+        <div class="columns is-variable is-5">
+          <div class="column is-half">
+            <figure>
+              <img src="assets/ugv_1.png" alt="UGV trajectories a (placeholder)." />
+              <figcaption class="figcap">(a) STL‑guided trajectories toward goals</figcaption>
+            </figure>
+          </div>
+          <div class="column is-half">
+            <figure>
+              <img src="assets/ugv_2.png" alt="UGV trajectories b (placeholder)." />
+              <figcaption class="figcap">(b) Rapid planning and collision avoidance</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional: Embedded video (replace src) -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Demo Video</h2>
+        <div class="content">
+          <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" title="STLBOW Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section id="bibtex" class="section bibtex">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre>@inproceedings{stlbow2025,
+  title     = {STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning},
+  author    = {<add authors>},
+  booktitle = {<venue>},
+  year      = {2025},
+  url       = {https://stlbow.github.io/}
+}</pre>
+      </div>
+    </section>
+
+    <!-- Acknowledgments -->
+    <section id="ack" class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Acknowledgments</h2>
+        <div class="ack-box content has-text-justified">
+          <p>
+            This study was supported by the University of Illinois Urbana‑Champaign’s Grainger College of Engineering through its Grants for the Advancement of Teaching in Engineering program. The course's question bank represents several years of iterative development by the authors. We gratefully acknowledge Grayson Schaer for building the project environments, and David Hanley and Pranay Thangeda for their significant contributions to the PrairieLearn question bank and lecture materials. We also thank the many others whose efforts helped make this research possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <span class="is-size-7">© <span id="year"></span> STLBOW • Built with Bulma. Replace placeholder images in <code>assets/</code> with your figures (Fig. 1–4) and add authors/venue details.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Tiny scrollspy highlight
+      const links = document.querySelectorAll('.scrollspy a');
+      const sections = [...links].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const onScroll = () => {
+        const y = window.scrollY + 120;
+        let activeIndex = 0;
+        sections.forEach((sec, i) => { if (sec.offsetTop <= y) activeIndex = i; });
+        links.forEach(l => l.classList.remove('is-active'));
+        links[activeIndex]?.classList.add('is-active');
+      };
+      document.addEventListener('scroll', onScroll);
+      onScroll();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
