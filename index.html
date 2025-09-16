@@ -107,14 +107,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We address multi-robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints.
-            We propose a two-stage framework integrating sampling-based online learning with formal STL reasoning.
-            At the single-robot level, our constrained Bayesian Optimization-based Tree search (<strong>cBOT</strong>) uses Gaussian-process
-            surrogate models to learn local cost maps and feasibility constraints, generating shorter collision-free trajectories with fewer samples.
-            At the multi-robot level, our STL-enhanced Kinodynamic Conflict-Based Search (<strong>STL-KCBS</strong>) incorporates STL monitoring into
-            conflict detection and resolution, ensuring specification satisfaction while maintaining scalability and probabilistic completeness.
-            Benchmarks show improved trajectory efficiency and safety over existing methods, and field experiments with autonomous surface vehicles
-            validate robustness in uncertain environments. (Videos: <a href="https://stlbot.github.io/" target="_blank" rel="noopener">stlbot.github.io</a>)
+            We address multi-robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints. We propose a two-stage framework integrating sampling-based online learning with formal STL reasoning. At the single-robot level, our constrained Bayesian Optimization-based Tree search (<strong>cBOT</strong>) uses Gaussian-process surrogate models to learn local cost maps and feasibility constraints, generating shorter collision-free trajectories with fewer samples. At the multi-robot level, our STL-enhanced Kinodynamic Conflict-Based Search (<strong>STL-KCBS</strong>) incorporates STL monitoring into conflict detection and resolution, ensuring specification satisfaction while maintaining scalability and probabilistic completeness. Benchmarks show improved trajectory efficiency and safety over existing methods, and field experiments with autonomous surface vehicles validate robustness in uncertain environments. (Videos: <a href="https://stlbot.github.io/" target="_blank" rel="noopener">stlbot.github.io</a>)
           </p>
         </div>
       </div>
@@ -140,12 +133,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="column is-5">
-            <figure>
-              <img src="assets/overview.png" alt="Overview diagram of cBOT + STL-KCBS workflow." />
-              <figcaption class="figcap">cBOT for single-robot planning + STL-KCBS for multi-robot coordination.</figcaption>
-            </figure>
-          </div> -->
         </div>
       </div>
     </section>
@@ -156,8 +143,7 @@
         <h2 class="title is-3">Benchmark Results</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluate across four environments (Env.1: empty, Env.2: cross-hall, Env.3: forest, Env.4: bugtrap) with teams up to 50 robots.
-            STLcBOT (cBOT + STL-KCBS) achieves near-perfect success, tractable runtimes, and compact paths relative to RRT-based and convex-optimization baselines.
+            We evaluate across four environments (Env. 1: empty, Env. 2: cross-hall, Env. 3: forest, Env. 4: bugtrap) with teams up to 50 robots. STLcBOT achieves near-perfect success, tractable runtimes, and compact paths relative to RRT-based and convex-optimization baselines.
           </p>
         </div>
 
@@ -165,36 +151,36 @@
           <div class="columns is-multiline">
             <div class="column is-12">
               <figure>
-                <img src="assets/paper_grid.png" alt="Benchmark comparisons across environments and metrics." />
-                <figcaption class="figcap"><strong>Fig. 1.</strong> Success rate, runtime, and path length vs. number of robots in four environments.</figcaption>
+                <img src="assets/paper_grid.png" alt="Benchmark comparison across four environments." />
+                <figcaption class="figcap"><strong>Fig. 5.</strong> Benchmark comparison of multi-robot motion planning algorithms across four representative environments (Env. 1: empty, Env. 2: cross-hall, Env. 3: forest, Env. 4: bugtrap). Columns report success rates, runtimes, and path lengths as team size increases. STLcBOT and other cBOT-based methods achieve near-perfect success and efficient paths with tractable runtimes, while RRT- and STGCS-based approaches degrade under clutter and density.</figcaption>
               </figure>
             </div>
           </div>
 
-          <!-- RRT vs cBOT under STL -->
+          <!-- RRT vs cBOT under STL (Fig. 2a–d) -->
           <div class="columns is-multiline">
             <div class="column is-half">
               <figure>
-                <img src="assets/forest_12n_rrt.png" alt="STL+RRT trajectories in forest." />
-                <figcaption class="figcap"><strong>Fig. 3a.</strong> STL+RRT trajectories in <em>forest</em>.</figcaption>
+                <img src="assets/forest_12n_rrt.png" alt="RRT under STL in forest." />
+                <figcaption class="figcap"><strong>Fig. 2a.</strong> RRT trajectories under STL constraints in <em>forest</em>.</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/forest_12n_bow.png" alt="STL+cBOT trajectories in forest." />
-                <figcaption class="figcap"><strong>Fig. 3b.</strong> STL+cBOT trajectories in <em>forest</em> (shorter/smoother).</figcaption>
+                <img src="assets/forest_12n_bow.png" alt="cBOT under STL in forest." />
+                <figcaption class="figcap"><strong>Fig. 2b.</strong> cBOT trajectories under STL constraints in <em>forest</em> (shorter, smoother).</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/simple_12n_rrt.png" alt="STL+RRT trajectories in cross-hall." />
-                <figcaption class="figcap"><strong>Fig. 3c.</strong> STL+RRT trajectories in <em>cross-hall</em>.</figcaption>
+                <img src="assets/simple_12n_rrt.png" alt="RRT under STL in cross-hall." />
+                <figcaption class="figcap"><strong>Fig. 2c.</strong> RRT trajectories under STL constraints in <em>cross-hall</em>.</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/simple_12n_bow.png" alt="STL+cBOT trajectories in cross-hall." />
-                <figcaption class="figcap"><strong>Fig. 3d.</strong> STL+cBOT trajectories in <em>cross-hall</em> (shorter/smoother).</figcaption>
+                <img src="assets/simple_12n_bow.png" alt="cBOT under STL in cross-hall." />
+                <figcaption class="figcap"><strong>Fig. 2d.</strong> cBOT trajectories under STL constraints in <em>cross-hall</em> (shorter, smoother).</figcaption>
               </figure>
             </div>
           </div>
@@ -202,45 +188,45 @@
       </div>
     </section>
 
-    <!-- Field Experiments (ASVs) -->
+    <!-- Field Experiments (Two ASVs) -->
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Outdoor Field Experiments with Two ASVs</h2>
         <div class="columns is-multiline is-variable is-4">
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_1.jpg" alt="Two-ASV trajectories (a)." />
-              <figcaption class="figcap">(a) Trajectory view</figcaption>
+              <img src="assets/asv/asv_1.jpg" alt="Two-ASV planned trajectory (a)." />
+              <figcaption class="figcap"><strong>Fig. 3a.</strong> Planned trajectory (two-ASV scenario).</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_2.jpg" alt="Two-ASV trajectories (b)." />
-              <figcaption class="figcap">(b) Trajectory view</figcaption>
+              <img src="assets/asv/asv_2.jpg" alt="Two-ASV planned trajectory (b)." />
+              <figcaption class="figcap"><strong>Fig. 3b.</strong> Planned trajectory (two-ASV scenario).</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_3.jpg" alt="Two-ASV trajectories (c)." />
-              <figcaption class="figcap">(c) Trajectory view</figcaption>
+              <img src="assets/asv/asv_3.jpg" alt="Two-ASV planned trajectory (c)." />
+              <figcaption class="figcap"><strong>Fig. 3c.</strong> Planned trajectory (two-ASV scenario).</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
               <img src="assets/asv/asv_4.jpg" alt="Two-ASV execution (d)." />
-              <figcaption class="figcap">(d) In the region of interest</figcaption>
+              <figcaption class="figcap"><strong>Fig. 3d.</strong> ASVs executing missions in the operational area.</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
               <img src="assets/asv/asv_5.jpg" alt="Two-ASV execution (e)." />
-              <figcaption class="figcap">(e) In the region of interest</figcaption>
+              <figcaption class="figcap"><strong>Fig. 3e.</strong> ASVs executing missions in the operational area.</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
               <img src="assets/asv/asv_6.jpg" alt="Two-ASV execution (f)." />
-              <figcaption class="figcap">(f) In the region of interest</figcaption>
+              <figcaption class="figcap"><strong>Fig. 3f.</strong> ASVs executing missions in the operational area.</figcaption>
             </figure>
           </div>
         </div>
@@ -254,21 +240,21 @@
         <div class="columns is-variable is-5">
           <div class="column is-half">
             <figure>
-              <img src="assets/asv/asv_3_1.jpg" alt="Three-ASV trajectories (a)." />
-              <figcaption class="figcap">(a) Trajectory view with real ASVs</figcaption>
+              <img src="assets/asv/asv_3_1.jpg" alt="Three-ASV trajectory execution (a)." />
+              <figcaption class="figcap"><strong>Fig. 4a.</strong> Trajectory execution where ASVs reach goals while avoiding fountain obstacles.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure>
-              <img src="assets/asv/asv_3_2.jpg" alt="Three-ASV trajectories (b)." />
-              <figcaption class="figcap">(b) Trajectory view with real ASVs</figcaption>
+              <img src="assets/asv/asv_3_2.jpg" alt="Three-ASV trajectory execution (b)." />
+              <figcaption class="figcap"><strong>Fig. 4b.</strong> Trajectory execution where ASVs reach goals while avoiding fountain obstacles.</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- UGV Experiments -->
+    <!-- UGV Experiments (Indoor) -->
     <section id="ugv" class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Indoor UGV Experiments</h2>
@@ -276,13 +262,13 @@
           <div class="column is-half">
             <figure>
               <img src="assets/gv_1.jpg" alt="UGV trajectories (a)." />
-              <figcaption class="figcap">(a) STL-guided trajectories toward goals</figcaption>
+              <figcaption class="figcap"><strong>Fig. 1a.</strong> STLcBOT applied to three UGVs navigating a cluttered indoor environment.</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure>
               <img src="assets/gv_2.jpg" alt="UGV trajectories (b)." />
-              <figcaption class="figcap">(b) Rapid planning and collision avoidance</figcaption>
+              <figcaption class="figcap"><strong>Fig. 1b.</strong> Kinodynamically-constrained trajectories enabling accurate tracking and collision avoidance.</figcaption>
             </figure>
           </div>
         </div>
