@@ -3,9 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Project page for STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning (STLBOW)." />
-    <meta name="keywords" content="STL, Signal Temporal Logic, multi-robot planning, Bayesian Optimization, KCBS, cBOT, STLcBOT" />
-    <title>STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</title>
+    <meta
+      name="description"
+      content="Project page for STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning (STLcBOT)."
+    />
+    <meta
+      name="keywords"
+      content="STL, Signal Temporal Logic, STL-KCBS, KCBS, cBOT, STLcBOT, multi-robot planning, kinodynamic constraints, Gaussian processes, Bayesian Optimization, robustness monitoring"
+    />
+    <title>STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</title>
 
     <!-- Fonts & UI -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,700|Castoro:400,700&display=swap" rel="stylesheet" />
@@ -13,9 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <style>
-      :root {
-        --brand: #2b6cb0;
-      }
+      :root { --brand: #2b6cb0; }
       html, body { font-family: 'Noto Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
       .hero.is-light { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 60%); }
       .publication-title { font-family: 'Google Sans', 'Noto Sans', sans-serif; letter-spacing: -0.3px; }
@@ -45,41 +49,34 @@
       <div class="hero-body">
         <div class="container is-max-desktop has-text-centered">
           <p class="subtitle kicker">STLcBOT</p>
-          <h1 class="title is-1 publication-title">STL‑Constrained Multi‑Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</h1>
+          <h1 class="title is-1 publication-title">STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning</h1>
           <p class="is-size-6 mt-2">
             <span class="tag is-stl is-light is-rounded">Signal Temporal Logic</span>
-            <span class="tag is-planner is-light is-rounded">Multi‑Robot Planning</span>
+            <span class="tag is-planner is-light is-rounded">Multi-Robot Planning</span>
             <span class="tag is-bow is-light is-rounded">Bayesian Optimization</span>
           </p>
 
           <!-- Authors (edit as needed) -->
           <div class="is-size-5 mt-4 publication-authors">
-            <span class="author-block">
-              <!-- TODO: Replace with the correct author list/affiliations -->
-              <strong>Authors:</strong> Your Author List Here
-            </span>
+            <span class="author-block"><strong>Authors:</strong> &lt;Add authors & affiliations&gt;</span>
           </div>
 
           <!-- Links -->
           <div class="publication-links mt-4">
-            <a class="button is-dark is-rounded" href="assets/STLcBOT.pdf" target="_blank">
+            <a class="button is-dark is-rounded" href="assets/STLcBOT.pdf" target="_blank" rel="noopener">
               <span class="icon"><i class="fas fa-file-pdf"></i></span>
               <span>Paper (PDF)</span>
             </a>
-            <a class="button is-link is-light is-rounded" href="https://stlbot.github.io/" target="_blank">
+            <a class="button is-link is-light is-rounded" href="https://stlbot.github.io/" target="_blank" rel="noopener">
               <span class="icon"><i class="fas fa-video"></i></span>
               <span>Project / Videos</span>
             </a>
-            <!-- <a class="button is-dark is-rounded" href="https://github.com/your-repo" target="_blank">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>Code</span>
-            </a> -->
             <a class="button is-rounded" href="#bibtex">
               <span class="icon"><i class="fas fa-quote-right"></i></span>
               <span>Cite</span>
             </a>
             <!-- Optional: Code repo -->
-            <a class="button is-dark is-rounded" href="https://github.com/your/repo" target="_blank">
+            <a class="button is-dark is-rounded" href="https://github.com/your/repo" target="_blank" rel="noopener">
               <span class="icon"><i class="fab fa-github"></i></span>
               <span>Code</span>
             </a>
@@ -91,7 +88,7 @@
     <!-- Sticky subnav -->
     <div class="sticky-nav">
       <div class="container is-max-desktop">
-        <nav class="level scrollspy py-2">
+        <nav class="level scrollspy py-2" aria-label="Section navigation">
           <div class="level-left">
             <a class="level-item" href="#abstract">Abstract</a>
             <a class="level-item" href="#overview">Overview</a>
@@ -110,7 +107,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We address multi‑robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints. Exact approaches face scalability bottlenecks and limited adaptability, while conventional sampling‑based methods require excessive samples for optimal trajectories. We propose a two‑stage framework integrating sampling‑based online learning with formal STL reasoning. At the single‑robot level, our constrained Bayesian Optimization‑based Tree search (cBOT) planner uses Gaussian process surrogate models to learn local cost maps and feasibility constraints, generating shorter collision‑free trajectories with fewer samples. At the multi‑robot level, our STL‑enhanced Kinodynamic Conflict‑Based Search (STL‑KCBS) algorithm incorporates STL monitoring into conflict detection and resolution, ensuring specification satisfaction while maintaining scalability and probabilistic completeness. Benchmarking demonstrates improved trajectory efficiency and safety over existing methods. Real‑world experiments with autonomous surface vehicles validate robustness and practical applicability in uncertain environments.
+            We address multi-robot motion planning under Signal Temporal Logic (STL) specifications with kinodynamic constraints.
+            We propose a two-stage framework integrating sampling-based online learning with formal STL reasoning.
+            At the single-robot level, our constrained Bayesian Optimization-based Tree search (<strong>cBOT</strong>) uses Gaussian-process
+            surrogate models to learn local cost maps and feasibility constraints, generating shorter collision-free trajectories with fewer samples.
+            At the multi-robot level, our STL-enhanced Kinodynamic Conflict-Based Search (<strong>STL-KCBS</strong>) incorporates STL monitoring into
+            conflict detection and resolution, ensuring specification satisfaction while maintaining scalability and probabilistic completeness.
+            Benchmarks show improved trajectory efficiency and safety over existing methods, and field experiments with autonomous surface vehicles
+            validate robustness in uncertain environments. (Videos: <a href="https://stlbot.github.io/" target="_blank" rel="noopener">stlbot.github.io</a>)
           </p>
         </div>
       </div>
@@ -125,9 +129,9 @@
             <div class="content">
               <h3 class="title is-5">Key Ideas</h3>
               <ul>
-                <li><strong>cBOT:</strong> A constrained Bayesian optimization‑based tree search that learns a <em>local cost map</em> and <em>feasibility</em> using Gaussian processes to produce shorter, safer trajectories with fewer samples.</li>
-                <li><strong>STL‑KCBS:</strong> STL‑enhanced kinodynamic conflict‑based search using robustness‑based conflict detection and STL monitors for specification‑compliant multi‑robot coordination.</li>
-                <li><strong>Scalability & Guarantees:</strong> Decoupled low‑level planning with probabilistic completeness, coupled with formal STL monitoring for robust satisfaction.</li>
+                <li><strong>cBOT:</strong> Constrained BO-based tree search that learns a <em>local cost map</em> and <em>feasibility</em> (GP surrogates) to produce shorter, safer trajectories with fewer samples.</li>
+                <li><strong>STL-KCBS:</strong> STL-enhanced kinodynamic CBS using robustness-based conflict detection and STL monitors for specification-compliant multi-robot coordination.</li>
+                <li><strong>Scalability & Guarantees:</strong> Decoupled low-level planning with probabilistic completeness, paired with formal STL monitoring for robust satisfaction.</li>
               </ul>
               <div class="tags mt-3">
                 <span class="tag is-spec">Kinodynamic Constraints</span>
@@ -137,63 +141,60 @@
             </div>
           </div>
           <div class="column is-5">
-            <!-- Placeholder diagram; replace src with an overview figure if available -->
             <figure>
-              <img src="assets/overview.png" alt="Overview diagram of cBOT + STL‑KCBS workflow (placeholder)." />
-              <figcaption class="figcap">High‑level workflow: cBOT for single‑robot local planning + STL‑KCBS for multi‑robot coordination.</figcaption>
+              <img src="assets/overview.png" alt="Overview diagram of cBOT + STL-KCBS workflow." />
+              <figcaption class="figcap">cBOT for single-robot planning + STL-KCBS for multi-robot coordination.</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Results / Benchmarks (Fig. 1–3 in paper) -->
+    <!-- Results / Benchmarks -->
     <section id="results" class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Benchmark Results</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluate across four environments (empty, cross‑hall, forest, bugtrap) with teams up to 50 robots. STLcBOT (cBOT + STL‑KCBS) delivers near‑perfect success, tractable runtimes, and compact paths compared to RRT‑based and convex optimization‑based baselines.
+            We evaluate across four environments (Env.1: empty, Env.2: cross-hall, Env.3: forest, Env.4: bugtrap) with teams up to 50 robots.
+            STLcBOT (cBOT + STL-KCBS) achieves near-perfect success, tractable runtimes, and compact paths relative to RRT-based and convex-optimization baselines.
           </p>
         </div>
 
         <div class="figure-grid">
-          <!-- Fig. 1: Paper-style grid -->
           <div class="columns is-multiline">
             <div class="column is-12">
               <figure>
-                <img src="assets/paper_grid.png" alt="Benchmark comparison across 4 environments and metrics (placeholder)." />
-                <figcaption class="figcap">
-                  <strong>Fig. 1.</strong> Benchmark comparison across representative environments. Columns report success rate, runtime, and path length as the number of robots increases.
-                </figcaption>
+                <img src="assets/paper_grid.png" alt="Benchmark comparisons across environments and metrics." />
+                <figcaption class="figcap"><strong>Fig. 1.</strong> Success rate, runtime, and path length vs. number of robots in four environments.</figcaption>
               </figure>
             </div>
           </div>
 
-          <!-- Fig. 3: RRT vs BOW under STL (two environments, 12 robots) -->
+          <!-- RRT vs cBOT under STL -->
           <div class="columns is-multiline">
             <div class="column is-half">
               <figure>
-                <img src="assets/forest_12n_rrt.png" alt="RRT with STL in forest (placeholder)." />
+                <img src="assets/forest_12n_rrt.png" alt="STL+RRT trajectories in forest." />
                 <figcaption class="figcap"><strong>Fig. 3a.</strong> STL+RRT trajectories in <em>forest</em>.</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/forest_12n_bow.png" alt="BOW with STL in forest (placeholder)." />
+                <img src="assets/forest_12n_bow.png" alt="STL+cBOT trajectories in forest." />
                 <figcaption class="figcap"><strong>Fig. 3b.</strong> STL+cBOT trajectories in <em>forest</em> (shorter/smoother).</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/simple_12n_rrt.png" alt="RRT with STL in cross-hall (placeholder)." />
-                <figcaption class="figcap"><strong>Fig. 3c.</strong> STL+RRT trajectories in <em>cross‑hall</em>.</figcaption>
+                <img src="assets/simple_12n_rrt.png" alt="STL+RRT trajectories in cross-hall." />
+                <figcaption class="figcap"><strong>Fig. 3c.</strong> STL+RRT trajectories in <em>cross-hall</em>.</figcaption>
               </figure>
             </div>
             <div class="column is-half">
               <figure>
-                <img src="assets/simple_12n_bow.png" alt="BOW with STL in cross-hall (placeholder)." />
-                <figcaption class="figcap"><strong>Fig. 3d.</strong> STL+cBOT trajectories in <em>cross‑hall</em> (shorter/smoother).</figcaption>
+                <img src="assets/simple_12n_bow.png" alt="STL+cBOT trajectories in cross-hall." />
+                <figcaption class="figcap"><strong>Fig. 3d.</strong> STL+cBOT trajectories in <em>cross-hall</em> (shorter/smoother).</figcaption>
               </figure>
             </div>
           </div>
@@ -201,44 +202,44 @@
       </div>
     </section>
 
-    <!-- Field Experiments (ASVs) Fig. 2 -->
+    <!-- Field Experiments (ASVs) -->
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Outdoor Field Experiments with Two ASVs</h2>
         <div class="columns is-multiline is-variable is-4">
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_1.jpg" alt="ASV trajectories a (placeholder)." />
+              <img src="assets/asv/asv_1.jpg" alt="Two-ASV trajectories (a)." />
               <figcaption class="figcap">(a) Trajectory view</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_2.jpg" alt="ASV trajectories b (placeholder)." />
+              <img src="assets/asv/asv_2.jpg" alt="Two-ASV trajectories (b)." />
               <figcaption class="figcap">(b) Trajectory view</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_3.jpg" alt="ASV trajectories c (placeholder)." />
+              <img src="assets/asv/asv_3.jpg" alt="Two-ASV trajectories (c)." />
               <figcaption class="figcap">(c) Trajectory view</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_4.jpg" alt="ASVs in ROI d (placeholder)." />
+              <img src="assets/asv/asv_4.jpg" alt="Two-ASV execution (d)." />
               <figcaption class="figcap">(d) In the region of interest</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_5.jpg" alt="ASVs in ROI e (placeholder)." />
+              <img src="assets/asv/asv_5.jpg" alt="Two-ASV execution (e)." />
               <figcaption class="figcap">(e) In the region of interest</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_6.jpg" alt="ASVs in ROI f (placeholder)." />
+              <img src="assets/asv/asv_6.jpg" alt="Two-ASV execution (f)." />
               <figcaption class="figcap">(f) In the region of interest</figcaption>
             </figure>
           </div>
@@ -246,41 +247,41 @@
       </div>
     </section>
 
-        <!-- Field Experiments (ASVs) Fig. 2 -->
+    <!-- Three-ASV Field Experiments -->
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Outdoor Field Experiments with Three ASVs</h2>
         <div class="columns is-multiline is-variable is-4">
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_3_1.jpg" alt="ASV trajectories a (placeholder)." />
-              <figcaption class="figcap">(a) Trajectory view with Real ASVs</figcaption>
+              <img src="assets/asv/asv_3_1.jpg" alt="Three-ASV trajectories (a)." />
+              <figcaption class="figcap">(a) Trajectory view with real ASVs</figcaption>
             </figure>
           </div>
           <div class="column is-one-third">
             <figure>
-              <img src="assets/asv/asv_3_2.jpg" alt="ASV trajectories b (placeholder)." />
-              <figcaption class="figcap">(b) Trajectory view with Real ASVs</figcaption>
+              <img src="assets/asv/asv_3_2.jpg" alt="Three-ASV trajectories (b)." />
+              <figcaption class="figcap">(b) Trajectory view with real ASVs</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- UGV Experiments (Fig. 4) -->
+    <!-- UGV Experiments -->
     <section id="ugv" class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">Indoor UGV Experiments</h2>
         <div class="columns is-variable is-5">
           <div class="column is-half">
             <figure>
-              <img src="assets/gv_1.jpg" alt="UGV trajectories a (placeholder)." />
-              <figcaption class="figcap">(a) STL‑guided trajectories toward goals</figcaption>
+              <img src="assets/gv_1.jpg" alt="UGV trajectories (a)." />
+              <figcaption class="figcap">(a) STL-guided trajectories toward goals</figcaption>
             </figure>
           </div>
           <div class="column is-half">
             <figure>
-              <img src="assets/gv_2.jpg" alt="UGV trajectories b (placeholder)." />
+              <img src="assets/gv_2.jpg" alt="UGV trajectories (b)." />
               <figcaption class="figcap">(b) Rapid planning and collision avoidance</figcaption>
             </figure>
           </div>
@@ -288,12 +289,13 @@
       </div>
     </section>
 
+    <!-- Videos -->
     <section class="section">
       <div class="container is-max-desktop">
         <h2 class="title is-3">STLcBOT Ground Robot Experiments</h2>
         <div class="content">
-          <video controls>
-            <source src="assets/videos/ground_exp.mp4" type="video/mp4">
+          <video class="video" controls>
+            <source src="assets/videos/ground_exp.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -303,8 +305,8 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3">STLcBOT Outdoor Experiments with Two ASVs</h2>
         <div class="content">
-          <video controls>
-            <source src="assets/videos/ASV_2.mp4" type="video/mp4">
+          <video class="video" controls>
+            <source src="assets/videos/ASV_2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -314,25 +316,24 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3">STLcBOT Outdoor Experiments with Three ASVs</h2>
         <div class="content">
-          <video controls>
-            <source src="assets/videos/ASV_3.mp4" type="video/mp4">
+          <video class="video" controls>
+            <source src="assets/videos/ASV_3.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
     </section>
-    
 
     <!-- BibTeX -->
     <section id="bibtex" class="section bibtex">
       <div class="container is-max-desktop">
         <h2 class="title is-3">BibTeX</h2>
-        <pre>@inproceedings{stlbow2025,
+<pre>@inproceedings{stlcbot2025,
   title     = {STL-Constrained Multi-Robot Trajectory Planning via Constrained Bayesian Optimization and Local Cost Map Learning},
-  author    = {<add authors>},
-  booktitle = {<venue>},
+  author    = {&lt;add authors&gt;},
+  booktitle = {&lt;venue&gt;},
   year      = {2025},
-  url       = {https://stlbow.github.io/}
+  url       = {https://stlbot.github.io/}
 }</pre>
       </div>
     </section>
@@ -342,9 +343,7 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3">Acknowledgments</h2>
         <div class="ack-box content has-text-justified">
-          <p>
-            
-          </p>
+          <p><!-- Add funding, lab, and collaborator acknowledgments here. --></p>
         </div>
       </div>
     </section>
@@ -352,9 +351,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="content has-text-centered">
-        <p>
-          <span class="is-size-7">© <span id="year"></span> STLBOW </span>
-        </p>
+        <p><span class="is-size-7">© <span id="year"></span> STLcBOT</span></p>
       </div>
     </footer>
 
@@ -375,4 +372,3 @@
     </script>
   </body>
 </html>
-
